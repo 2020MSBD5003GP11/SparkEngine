@@ -1,9 +1,17 @@
-
 import sys
 from pyspark.sql import SQLContext, SparkSession
 from pyspark import SparkContext, SparkConf
 
 sparkConf = SparkConf().setMaster("local").setAppName("MongoSparkConnectorTour").set("spark.app.id", "MongoSparkConnectorTour")
+
+
+# spark = SparkSession.builder.appName("pyspark-notebook2").\
+#                                 master("spark://spark-master:7077").\
+#                                 config("spark.executor.memory", "1g").\
+#                                 config("spark.mongodb.input.uri","mongodb://mongo1:27017,mongo2:27018,mongo3:27019/Stocks.Source?replicaSet=rs0").\
+#                                 config("spark.mongodb.output.uri","mongodb://mongo1:27017,mongo2:27018,mongo3:27019/Stocks.Source?replicaSet=rs0").\
+#                                 config("spark.jars.packages", "org.mongodb.spark:mongo-spark-connector_2.12:3.0.0").\
+#                                 getOrCreate()
 
 #If executed via pyspark, sc is already instantiated
 sc = SparkContext(conf=sparkConf)
