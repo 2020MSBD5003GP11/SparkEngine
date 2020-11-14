@@ -8,11 +8,15 @@ For the Scala equivalent example see [mongodb-spark-docker](https://github.com/s
 
 #### Environment : 
 
-* Ubuntu v16.04
-* Apache Spark v2.0.1
-* MongoDB Spark Connector v2.0.0-rc0
-* MongoDB v3.2.x
-* Python v2.7.x
+* Ubuntu v18.04
+* Apache Spark v3.0.1
+* MongoDB Spark Connector v3.0.0
+* MongoDB v3.2.0
+* Python v3.6.9 
+
+MongoDB Connector for Spark	| Spark Version	| MongoDB Version
+|:---:|:---:|:---:|
+3.0.0 | 3.0.x | 2.6 or later
 
 ### Starting up 
 
