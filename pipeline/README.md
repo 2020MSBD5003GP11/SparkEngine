@@ -1,12 +1,8 @@
-![GitHub](https://img.shields.io/badge/Release-PROD-green.svg)
-![GitHub](https://img.shields.io/badge/Version-0.0.1-lightgrey.svg)
-![GitHub](https://img.shields.io/badge/License-MIT-blue.svg)
+# Online Store Consumer Behaviour Monitoring Service
+## 2020MSBD5003GP11 - Wide Project
 
-# One Click Deploy: Kafka Spark Streaming with Zeppelin UI
-
-This repository contains a docker-compose stack with Kafka and Spark Streaming, together with monitoring with Kafka Manager and a Grafana Dashboard. The networking is set up so Kafka brokers can be accessed from the host.
-
-It also comes with a producer-consumer example using a small subset of the [US Census adult income prediction dataset](https://www.kaggle.com/johnolafenwa/us-census-data).
+This repository for `2020MSBD5003GP11(Wide Project) -- Online Store Consumer Behaviour Monitoring Service`, <br/>
+contains a docker-compose stack with Kafka and Spark Streaming, together with monitoring with Kafka Manager and a Grafana Dashboard 
 
 ## High level features:
 
@@ -31,6 +27,10 @@ It also comes with a producer-consumer example using a small subset of the [US C
 </td>
 </table>
 
+---
+
+<br/>
+
 ## Access(Port) Summary
 
 | Container | Image | Tag | Accessible | UI Portal |
@@ -42,6 +42,8 @@ It also comes with a producer-consumer example using a small subset of the [US C
 | Kafka Manager | hlebalbau/kafka_manager | 1.3.3.18 | 172.25.0.14:9000 | [localhost:20086](localhost:20086) |
 | Prometheus | prom/prometheus | v2.8.1 | 172.25.0.15:9090 | / |
 | Grafana | grafana/grafana | 6.1.1 | 172.25.0.16:3000 | [localhost:20087](localhost:20087) |
+
+<br/>
 
 ---
 
