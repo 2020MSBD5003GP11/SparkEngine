@@ -35,13 +35,13 @@ contains a docker-compose stack with Kafka and Spark Streaming, together with mo
 
 | Container | Image | Tag | Accessible | UI Portal |
 |:-:|:-:|:-:|:-:|:-:|
-| Zeppelin<br/>(Spark Notebook) | apache/zeppelin | 0.8.1 | 172.25.0.19:8080 | [localhost:20085](localhost:20085) |
+| Zeppelin<br/>(Spark Notebook) | apache/zeppelin | 0.8.1 | 172.25.0.19:8080 | [localhost:20085](http://localhost:20085) |
 | Zookeeper | wurstmeister/zookeeper | latest | 172.25.0.11:2181 | / |
 | Kafka1 | wurstmeister/kafka | 2.12-2.2.0 | 172.25.0.12:9092 | / |
 | Kafka2 | wurstmeister/kafka | 2.12-2.2.0 | 172.25.0.13:9092 | / |
-| Kafka Manager | hlebalbau/kafka_manager | 1.3.3.18 | 172.25.0.14:9000 | [localhost:20086](localhost:20086) |
+| Kafka Manager | hlebalbau/kafka_manager | 1.3.3.18 | 172.25.0.14:9000 | [localhost:20086](http://localhost:20086) |
 | Prometheus | prom/prometheus | v2.8.1 | 172.25.0.15:9090 | / |
-| Grafana | grafana/grafana | 6.1.1 | 172.25.0.16:3000 | [localhost:20087](localhost:20087) |
+| Grafana | grafana/grafana | 6.1.1 | 172.25.0.16:3000 | [localhost:20087](http://localhost:20087) |
 
 <br/>
 
@@ -65,7 +65,7 @@ docker-compose up -d
 
 ### 2. Access the notebook
 
-[Zeppelin Notebook](localhost:20085) provide a notebook entrypoint for easily accsesing spark interpreter.
+[Zeppelin Notebook](http://localhost:20085) provide a notebook entrypoint for easily accsesing spark interpreter.
 
 Now we can start running the cells. 
 
