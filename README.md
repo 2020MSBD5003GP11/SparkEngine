@@ -1,76 +1,41 @@
-# Docker for MongoDB and Apache Spark (Python)
+# Online Store Consumer Behaviour Monitoring Service
+## 2020MSBD5003GP11 - Wide Project
 
-An example of docker-compose to set up a single [Apache Spark](http://spark.apache.org/) node connecting to [MongoDB](https://www.mongodb.com/) via [MongoDB Spark Connector](https://github.com/mongodb/mongo-spark)
+This repository contains a docker-compose stack with Kafka and Spark Streaming, together with monitoring with Kafka Manager and a Grafana Dashboard.
 
-For the Scala equivalent example see [mongodb-spark-docker](https://github.com/sindbach/mongodb-spark-docker).
+---
 
-** For demo purposes only **
+### Tools used in docker-compose pipeline:
+- Kafka
+- Kafka Manager
+- pyspark v2.2.1 ( Zeppelin: 0.8.1 )
+- Zookeeper
+- Prometheus
+- Grafana
 
-#### Environment : 
+---
 
-* Ubuntu v18.04
-* Apache Spark v3.0.1
-* MongoDB Spark Connector v3.0.0
-* MongoDB v3.2.0
-* Python v3.6.9 
+### Prerequirement 
 
-MongoDB Connector for Spark	| Spark Version	| MongoDB Version
-|:---:|:---:|:---:|
-3.0.0 | 3.0.x | 2.6 or later
+- Docker
+- docker-compose
+- 6GB free memory or above 
+- Quad Core or above
 
-### Starting up 
+---
 
-You can start by running command : 
+#### Testing platform : 
 
-```
-docker-compose run pyspark bash
-```
+* Apache Spark v2.2.1
+* MongoDB Spark Connector
+  - mongo-java-driver-3.4.2.jar
+  - mongo-spark-connector_2.11-2.2.1.jar
+  - scala-library-2.11.8.jar
+* MongoDB Atlas
+* Python v3.6.9 / v2.7 / Scala
 
-Which would run the spark node and the mongodb node, and provides you with bash shell for the pyspark. 
+---
 
-From the spark instance, you could reach the MongoDB instance using `mongodb` hostname. 
+### Quick Start
 
-You can find a small dataset example in `/home/ubuntu/times.json` which you can load using [initDocuments.py](pyspark/files/initDocuments.py) :
-
-```
-pyspark --packages org.mongodb.spark:mongo-spark-connector_${SCALA_VERSION}:${MONGO_SPARK_VERSION} ./initDocuments.py
-```
-
-
-For example, please see [examples.py](pyspark/files/examples.py) load dataframes and write back to mongodb. This file will also be available inside of the pyspark container in `/home/ubuntu/examples.py`
-
-Run the `pyspark` by executing: 
-
-```sh
-pyspark --packages org.mongodb.spark:mongo-spark-connector_${SCALA_VERSION}:${MONGO_SPARK_VERSION}
-```
-
-To set session wide option you can also specify: 
-
-```
-pyspark --conf "spark.mongodb.input.uri=mongodb://mongodb:27017/spark.times" --conf "spark.mongodb.output.uri=mongodb://mongodb/spark.output" --packages org.mongodb.spark:mongo-spark-connector_${SCALA_VERSION}:${MONGO_SPARK_VERSION} 
-```
-
-You can also append `<file.py>` to execute a python file via spark-submit. For example: 
-
-```sh
-spark-submit --packages org.mongodb.spark:mongo-spark-connector_${SCALA_VERSION}:${MONGO_SPARK_VERSION} ./examples.py 
-```
-
-### More Information. 
-
-See related article:
-
-* [MongoDB Spark Connector](https://docs.mongodb.com/spark-connector/)
-
-* [MongoDB Course M233: Getting Started with Spark and MongoDB](https://university.mongodb.com/courses/M233/about)
-
-
-
-# SparkEngine (Quick start)
-
-```bash
-docker pull jupyter/pyspark-notebook
-docker run -it --rm -p 50024:8888 -v $PWD:/home/jovyan/work jupyter/pyspark-notebook jupyter notebook --ip='*' --NotebookApp.token='' --NotebookApp.password=''
-```
-[Open](http://localhost:50024/)
+> Follow the README in `pipeline` folder
